@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOAN CLUE | Empowering Growth, Enabling Dreams</title>
+
+    <!-- External CSS & Fonts -->
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        blue: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            600: '#2563eb', // Electric blue primary
+                            800: '#1e40af',
+                            900: '#0f172a', // Navy blue
+                        },
+                        gold: {
+                            400: '#fbbf24',
+                            500: '#f59e0b', // Accent
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="text-slate-800 antialiased font-sans flex flex-col min-h-screen">
+
+    <!-- Header Navigation -->
+    <header class="bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-slate-100 shadow-sm transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#"
+                        class="font-heading font-black text-2xl tracking-tighter text-blue-900 flex items-center gap-2">
+                        <i class="fa-solid fa-chart-line text-blue-600"></i>
+                        <span class="brand-name">LOAN CLUE</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation (Mega Menu) -->
+                <nav class="hidden md:flex space-x-1 sm:space-x-4 lg:space-x-8 h-full items-center">
+
+                    <!-- Verticals Mega Menu -->
+                    <div class="relative has-mega-menu h-full flex items-center cursor-pointer group">
+                        <span
+                            class="text-slate-600 font-medium hover:text-blue-600 px-3 py-2 transition-colors flex items-center">
+                            Verticals <i
+                                class="fa-solid fa-chevron-down ml-2 text-xs text-slate-400 group-hover:text-blue-600 transition-colors"></i>
+                        </span>
+
+                        <!-- Dropdown Content -->
+                        <div
+                            class="mega-menu-content absolute top-20 left-1/2 -translate-x-1/2 w-80 bg-white border border-slate-100 shadow-2xl rounded-2xl hidden opacity-0 translate-y-2 transition-all duration-200 p-6 z-50">
+                            <h4
+                                class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4 border-b border-slate-50 pb-2">
+                                Our Verticals</h4>
+                            <ul class="space-y-2">
+                                <li>
+                                    <a href="#"
+                                        class="block px-4 py-3 hover:bg-blue-50 rounded-lg text-slate-700 font-medium hover:text-blue-600 transition-colors">
+                                        <div class="flex items-center"><i
+                                                class="fa-solid fa-building-columns w-6 text-blue-500"></i> Wholesale
+                                            Financing</div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                        class="block px-4 py-3 hover:bg-blue-50 rounded-lg text-slate-700 font-medium hover:text-blue-600 transition-colors">
+                                        <div class="flex items-center"><i
+                                                class="fa-solid fa-network-wired w-6 text-blue-500"></i> Embedded
+                                            Financing</div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                        class="block px-4 py-3 hover:bg-blue-50 rounded-lg text-slate-700 font-medium hover:text-blue-600 transition-colors">
+                                        <div class="flex items-center"><i
+                                                class="fa-solid fa-handshake w-6 text-blue-500"></i> Fintech
+                                            Partnerships</div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Products Mega Menu -->
+                    <div class="relative has-mega-menu h-full flex items-center cursor-pointer group">
+                        <span
+                            class="text-slate-600 font-medium hover:text-blue-600 px-3 py-2 transition-colors flex items-center">
+                            Products <i
+                                class="fa-solid fa-chevron-down ml-2 text-xs text-slate-400 group-hover:text-blue-600 transition-colors"></i>
+                        </span>
+
+                        <!-- Dropdown Content -->
+                        <div
+                            class="mega-menu-content absolute top-20 left-1/2 -translate-x-1/2 w-80 bg-white border border-slate-100 shadow-2xl rounded-2xl hidden opacity-0 translate-y-2 transition-all duration-200 p-6 z-50">
+                            <h4
+                                class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4 border-b border-slate-50 pb-2">
+                                Financial Products</h4>
+                            <ul class="space-y-2">
+                                <li>
+                                    <a href="#services"
+                                        class="block px-4 py-3 hover:bg-blue-50 rounded-lg text-slate-700 font-medium hover:text-blue-600 transition-colors">
+                                        Business Loans
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#services"
+                                        class="block px-4 py-3 hover:bg-blue-50 rounded-lg text-slate-700 font-medium hover:text-blue-600 transition-colors">
+                                        Personal Loans
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#services"
+                                        class="block px-4 py-3 hover:bg-blue-50 rounded-lg text-slate-700 font-medium hover:text-blue-600 transition-colors">
+                                        Small Business Loans
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#services"
+                                        class="block px-4 py-3 hover:bg-blue-50 rounded-lg text-slate-700 font-medium hover:text-blue-600 transition-colors">
+                                        Loan Against Property
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Company Dropdown -->
+                    <div class="relative has-mega-menu h-full flex items-center cursor-pointer group">
+                        <span
+                            class="text-slate-600 font-medium hover:text-blue-600 px-3 py-2 transition-colors flex items-center">
+                            Company <i
+                                class="fa-solid fa-chevron-down ml-2 text-xs text-slate-400 group-hover:text-blue-600 transition-colors"></i>
+                        </span>
+                        <div
+                            class="mega-menu-content absolute top-20 right-0 w-48 bg-white border border-slate-100 shadow-2xl rounded-2xl hidden opacity-0 translate-y-2 transition-all duration-200 py-3 z-50">
+                            <a href="#"
+                                class="block px-6 py-2 hover:bg-slate-50 text-slate-700 hover:text-blue-600">About
+                                Us</a>
+                            <a href="#"
+                                class="block px-6 py-2 hover:bg-slate-50 text-slate-700 hover:text-blue-600">Careers</a>
+                        </div>
+                    </div>
+                </nav>
+
+                <!-- Desktop CTA -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="#contact" class="text-slate-600 font-medium hover:text-blue-600 transition">Log In</a>
+                    <a href="#contact"
+                        class="bg-blue-600 text-white px-6 py-2.5 rounded-full font-medium shadow-[0_4px_14px_0_rgba(37,99,235,0.39)] hover:shadow-[0_6px_20px_rgba(37,99,235,0.23)] hover:-translate-y-0.5 transition-all duration-300">
+                        Apply Now
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="flex items-center md:hidden">
+                    <button id="mobile-menu-btn" class="text-slate-500 hover:text-blue-600 focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl transition-transform"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-white border-t border-slate-100 absolute w-full left-0 shadow-lg">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <div class="border-b border-slate-50 py-2">
+                    <button
+                        class="mobile-sub-btn w-full flex justify-between items-center text-left px-3 py-3 text-slate-700 font-medium">
+                        Verticals <i class="fa-solid fa-chevron-down caret text-xs text-slate-400"></i>
+                    </button>
+                    <div class="hidden pl-6 space-y-2 pb-2">
+                        <a href="#" class="block px-3 py-2 text-sm text-slate-500 hover:text-blue-600">Wholesale
+                            Financing</a>
+                        <a href="#" class="block px-3 py-2 text-sm text-slate-500 hover:text-blue-600">Embedded
+                            Financing</a>
+                        <a href="#" class="block px-3 py-2 text-sm text-slate-500 hover:text-blue-600">Fintech
+                            Partnerships</a>
+                    </div>
+                </div>
+
+                <div class="border-b border-slate-50 py-2">
+                    <button
+                        class="mobile-sub-btn w-full flex justify-between items-center text-left px-3 py-3 text-slate-700 font-medium">
+                        Products <i class="fa-solid fa-chevron-down caret text-xs text-slate-400"></i>
+                    </button>
+                    <div class="hidden pl-6 space-y-2 pb-2">
+                        <a href="#services" class="block px-3 py-2 text-sm text-slate-500 hover:text-blue-600">Business
+                            Loans</a>
+                        <a href="#services" class="block px-3 py-2 text-sm text-slate-500 hover:text-blue-600">Personal
+                            Loans</a>
+                        <a href="#services" class="block px-3 py-2 text-sm text-slate-500 hover:text-blue-600">Small
+                            Business Loans</a>
+                    </div>
+                </div>
+
+                <div class="py-4 px-3 flex flex-col space-y-3">
+                    <a href="#contact"
+                        class="text-center w-full bg-slate-100 text-slate-700 px-6 py-3 rounded-full font-medium">Log
+                        In</a>
+                    <a href="#contact"
+                        class="text-center w-full bg-blue-600 text-white px-6 py-3 rounded-full font-medium shadow-md">Apply
+                        Now</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section class="hero-gradient text-white pt-24 pb-32 md:pt-32 md:pb-48 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+                <span
+                    class="inline-block py-1.5 px-4 rounded-full bg-blue-800/50 border border-blue-400/30 text-blue-200 font-medium text-sm mb-6 uppercase tracking-wider backdrop-blur-sm reveal">
+                    Welcome to <span class="brand-name font-bold text-white"></span>
+                </span>
+                <h1
+                    class="brand-tagline text-5xl md:text-7xl font-heading font-black tracking-tight mb-8 leading-tight reveal delay-100">
+                    <!-- Injected by JS -->
+                </h1>
+                <p
+                    class="text-xl md:text-2xl text-blue-100 mb-10 max-w-3xl mx-auto font-light leading-relaxed reveal delay-200">
+                    Fast, accessible, and professional financing solutions tailored to fuel your next milestone.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-4 reveal delay-300">
+                    <a href="#contact"
+                        class="w-full sm:w-auto bg-gold-500 text-blue-900 border-2 border-gold-500 px-8 py-4 rounded-full font-bold text-lg hover:bg-gold-400 hover:border-gold-400 transition-all shadow-lg hover:shadow-gold-500/30">
+                        Apply Now
+                    </a>
+                    <a href="#services"
+                        class="w-full sm:w-auto bg-transparent border-2 border-white/30 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white/10 hover:border-white transition-all backdrop-blur-sm">
+                        Explore Products
+                    </a>
+                </div>
+            </div>
+
+            <!-- Curve Graphic at bottom of hero -->
+            <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-[0]">
+                <svg relative="true" viewBox="0 0 1200 120" preserveAspectRatio="none"
+                    class="w-full h-12 md:h-24 fill-slate-50">
+                    <path
+                        d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+                        opacity=".25"></path>
+                    <path
+                        d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
+                        opacity=".5"></path>
+                    <path
+                        d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z">
+                    </path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Dynamic Services Section -->
+        <section id="services" class="py-24 bg-slate-50 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center mb-16 reveal">
+                    <h2 class="text-blue-600 font-bold uppercase tracking-wider text-sm mb-2">What We Offer</h2>
+                    <h3 class="text-4xl font-heading font-black text-slate-800">Financial Products Designed For You</h3>
+                    <div class="w-24 h-1 bg-gold-400 mx-auto mt-6 rounded-full"></div>
+                </div>
+
+                <div id="services-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Services injected dynamically by main.js -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Signals / Legacy Section -->
+        <section class="py-20 bg-white border-y border-slate-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12 reveal">
+                    <h2 class="text-4xl font-heading font-black text-slate-800">Our Legacy of Trust</h2>
+                    <p class="text-slate-500 mt-4 max-w-2xl mx-auto">Building the foundation of modern finance through
+                        transparent partnerships and proven results.</p>
+                </div>
+
+                <div id="legacy-grid" class="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-slate-100">
+                    <!-- Numbers injected dynamically by main.js -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Get In Touch Section -->
+        <section id="contact" class="py-24 bg-slate-50">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div
+                    class="bg-white rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] sm:overflow-hidden flex flex-col md:flex-row reveal">
+
+                    <!-- Contact Info Pane -->
+                    <div
+                        class="bg-blue-900 text-white p-10 md:w-2/5 flex flex-col justify-between relative overflow-hidden">
+                        <!-- Abstract circles -->
+                        <div
+                            class="absolute -bottom-10 -right-10 w-40 h-40 bg-blue-800 rounded-full opacity-50 blur-2xl">
+                        </div>
+                        <div class="absolute top-10 -left-10 w-32 h-32 bg-blue-600 rounded-full opacity-50 blur-2xl">
+                        </div>
+
+                        <div class="relative z-10">
+                            <h3 class="text-2xl font-bold font-heading mb-2">Get in Touch</h3>
+                            <p class="text-blue-200 mb-10 text-sm">Fill up the form and our Team will get back to you
+                                within 24 hours.</p>
+
+                            <div class="space-y-6">
+                                <div class="flex items-start">
+                                    <i class="fa-solid fa-phone mt-1 text-gold-400 w-6"></i>
+                                    <span class="company-phone font-medium"></span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fa-solid fa-envelope mt-1 text-gold-400 w-6"></i>
+                                    <span class="company-email font-medium"></span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fa-solid fa-location-dot mt-1 text-gold-400 w-6"></i>
+                                    <span class="company-address font-medium text-sm leading-relaxed"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Form Pane -->
+                    <div class="p-10 md:w-3/5">
+                        <form class="space-y-6"
+                            onsubmit="event.preventDefault(); alert('Application Submitted Successfully!');">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-700 mb-2">First Name</label>
+                                    <input type="text"
+                                        class="w-full px-4 py-3 rounded-lg border border-slate-200 bg-slate-50 transition-colors"
+                                        placeholder="John" required>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-700 mb-2">Last Name</label>
+                                    <input type="text"
+                                        class="w-full px-4 py-3 rounded-lg border border-slate-200 bg-slate-50 transition-colors"
+                                        placeholder="Doe" required>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-2">Email Address</label>
+                                <input type="email"
+                                    class="w-full px-4 py-3 rounded-lg border border-slate-200 bg-slate-50 transition-colors"
+                                    placeholder="john@company.com" required>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-2">Choose Service</label>
+                                <select
+                                    class="w-full px-4 py-3 rounded-lg border border-slate-200 bg-slate-50 text-slate-700 transition-colors">
+                                    <option>Business Loan</option>
+                                    <option>Personal Loan</option>
+                                    <option>Small Business Auto Loan</option>
+                                    <option>Loan Against Property</option>
+                                </select>
+                            </div>
+
+                            <button type="submit"
+                                class="w-full bg-blue-600 text-white font-bold py-4 rounded-xl shadow-lg hover:bg-blue-700 hover:shadow-xl transition-all hover:-translate-y-1">
+                                Submit Application
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t border-slate-800 pt-16 pb-8 text-slate-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-start gap-12 mb-12">
+                <!-- Branding -->
+                <div class="md:w-1/3">
+                    <a href="#"
+                        class="font-heading font-black text-2xl tracking-tighter text-white flex items-center gap-2 mb-4">
+                        <i class="fa-solid fa-chart-line text-blue-500"></i>
+                        <span class="brand-name"></span>
+                    </a>
+                    <p class="text-slate-400 text-sm mb-6 max-w-sm">
+                        <span class="brand-tagline"></span>. We provide world-class financial solutions to fuel your
+                        growth.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-colors">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-colors">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-colors">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="flex gap-12 sm:gap-24">
+                    <div>
+                        <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-sm">Services</h4>
+                        <ul class="space-y-3 text-sm">
+                            <li><a href="#" class="hover:text-blue-400 transition-colors">Business Loans</a></li>
+                            <li><a href="#" class="hover:text-blue-400 transition-colors">Personal Loans</a></li>
+                            <li><a href="#" class="hover:text-blue-400 transition-colors">Small Business</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-sm">Company</h4>
+                        <ul class="space-y-3 text-sm">
+                            <li><a href="#" class="hover:text-blue-400 transition-colors">About Us</a></li>
+                            <li><a href="#" class="hover:text-blue-400 transition-colors">Careers</a></li>
+                            <li><a href="#" class="hover:text-blue-400 transition-colors">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom border / Copyright -->
+            <div
+                class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500">
+                <p>&copy; <span id="year">2026</span> <span class="brand-name"></span>. All rights reserved.</p>
+                <p class="mt-4 md:mt-0 flex items-center">
+                    <i class="fa-solid fa-location-dot mr-2"></i> <span class="company-address"></span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Logic Script -->
+    <script src="./config.js"></script>
+    <script src="./main.js"></script>
+
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>

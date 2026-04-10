@@ -2,7 +2,7 @@ window.siteConfig = {
   companyName: "LOAN CLUE",
   tagline: "Empowering Growth, Enabling Dreams",
   address: "IndiQube Lexington Tower, First Floor, Tavarekere Main Rd, Bengaluru, Karnataka 560029",
-  phone: "+91 1800-103-8961",
+  phone: "8595781465",
   email: "support@loanclue.com",
 
   // Your Services

@@ -342,38 +342,48 @@
 
                     <!-- Form Pane -->
                     <div class="p-10 md:w-3/5">
-                        <form class="space-y-6"
-                            onsubmit="event.preventDefault(); alert('Application Submitted Successfully!');">
+                        <form class="space-y-6" action="https://formsubmit.co/cozconsulting29@gmail.com" method="POST">
+                            <input type="hidden" name="_subject" value="New LOAN CLUE Enquiry!">
+                            
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                 <div>
                                     <label class="block text-sm font-medium text-slate-700 mb-2">First Name</label>
-                                    <input type="text"
+                                    <input type="text" name="First Name"
                                         class="w-full px-4 py-3 rounded-lg border border-slate-200 bg-slate-50 transition-colors"
                                         placeholder="John" required>
                                 </div>
                                 <div>
                                     <label class="block text-sm font-medium text-slate-700 mb-2">Last Name</label>
-                                    <input type="text"
+                                    <input type="text" name="Last Name"
                                         class="w-full px-4 py-3 rounded-lg border border-slate-200 bg-slate-50 transition-colors"
                                         placeholder="Doe" required>
                                 </div>
                             </div>
 
-                            <div>
-                                <label class="block text-sm font-medium text-slate-700 mb-2">Email Address</label>
-                                <input type="email"
-                                    class="w-full px-4 py-3 rounded-lg border border-slate-200 bg-slate-50 transition-colors"
-                                    placeholder="john@company.com" required>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-700 mb-2">Email Address</label>
+                                    <input type="email" name="Email"
+                                        class="w-full px-4 py-3 rounded-lg border border-slate-200 bg-slate-50 transition-colors"
+                                        placeholder="john@company.com" required>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-700 mb-2">Phone Number</label>
+                                    <input type="tel" name="Phone Number"
+                                        class="w-full px-4 py-3 rounded-lg border border-slate-200 bg-slate-50 transition-colors"
+                                        placeholder="Enter phone number" required>
+                                </div>
                             </div>
 
                             <div>
                                 <label class="block text-sm font-medium text-slate-700 mb-2">Choose Service</label>
-                                <select
+                                <select name="Service" required
                                     class="w-full px-4 py-3 rounded-lg border border-slate-200 bg-slate-50 text-slate-700 transition-colors">
-                                    <option>Business Loan</option>
-                                    <option>Personal Loan</option>
-                                    <option>Small Business Auto Loan</option>
-                                    <option>Loan Against Property</option>
+                                    <option value="" disabled selected>Select an option...</option>
+                                    <option value="Business Loan">Business Loan</option>
+                                    <option value="Personal Loan">Personal Loan</option>
+                                    <option value="Small Business Auto Loan">Small Business Auto Loan</option>
+                                    <option value="Loan Against Property">Loan Against Property</option>
                                 </select>
                             </div>
 

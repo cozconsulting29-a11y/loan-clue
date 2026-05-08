@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | LOAN CLUE - Empowering Growth, Enabling Dreams</title>
+
+    <!-- External CSS & Fonts -->
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        blue: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            600: '#2563eb',
+                            800: '#1e40af',
+                            900: '#0f172a',
+                        },
+                        gold: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="text-slate-800 antialiased font-sans flex flex-col min-h-screen">
+
+    <!-- Header Navigation -->
+    <header class="bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-slate-100 shadow-sm transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html"
+                        class="font-heading font-black text-2xl tracking-tighter text-blue-900 flex items-center gap-2">
+                        <i class="fa-solid fa-chart-line text-blue-600"></i>
+                        <span class="brand-name">LOAN CLUE</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-1 sm:space-x-4 lg:space-x-8 h-full items-center">
+                    <a href="index.html" class="text-slate-600 font-medium hover:text-blue-600 px-3 py-2 transition-colors">Home</a>
+                    <a href="about.html" class="text-slate-600 font-medium hover:text-blue-600 px-3 py-2 transition-colors">About Us</a>
+                    <a href="lender-search.html" class="text-slate-600 font-medium hover:text-blue-600 px-3 py-2 transition-colors">Lender Search</a>
+                    <div class="relative has-mega-menu h-full flex items-center cursor-pointer group">
+                        <span class="text-slate-600 font-medium hover:text-blue-600 px-3 py-2 transition-colors flex items-center">
+                            Verticals <i class="fa-solid fa-chevron-down ml-2 text-xs text-slate-400 group-hover:text-blue-600 transition-colors"></i>
+                        </span>
+                        <div class="mega-menu-content absolute top-20 left-1/2 -translate-x-1/2 w-80 bg-white border border-slate-100 shadow-2xl rounded-2xl hidden opacity-0 translate-y-2 transition-all duration-200 p-6 z-50">
+                            <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4 border-b border-slate-50 pb-2">Our Verticals</h4>
+                            <ul class="space-y-2">
+                                <li><a href="#" class="block px-4 py-3 hover:bg-blue-50 rounded-lg text-slate-700 font-medium hover:text-blue-600 transition-colors">Wholesale Financing</a></li>
+                                <li><a href="#" class="block px-4 py-3 hover:bg-blue-50 rounded-lg text-slate-700 font-medium hover:text-blue-600 transition-colors">Embedded Financing</a></li>
+                                <li><a href="#" class="block px-4 py-3 hover:bg-blue-50 rounded-lg text-slate-700 font-medium hover:text-blue-600 transition-colors">Fintech Partnerships</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <a href="about.html" class="text-blue-600 font-semibold px-3 py-2 transition-colors border-b-2 border-blue-600">About Us</a>
+                </nav>
+
+                <!-- Desktop CTA -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="index.html#contact"
+                        class="bg-blue-600 text-white px-6 py-2.5 rounded-full font-medium shadow-[0_4px_14px_0_rgba(37,99,235,0.39)] hover:shadow-[0_6px_20px_rgba(37,99,235,0.23)] hover:-translate-y-0.5 transition-all duration-300">
+                        Apply Now
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="flex items-center md:hidden">
+                    <button id="mobile-menu-btn" class="text-slate-500 hover:text-blue-600 focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl transition-transform"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 absolute w-full left-0 shadow-lg">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="index.html" class="block px-3 py-3 text-slate-700 font-medium">Home</a>
+                <a href="about.html" class="block px-3 py-3 text-blue-600 font-bold">About Us</a>
+                <div class="py-4 px-3">
+                    <a href="index.html#contact" class="text-center block w-full bg-blue-600 text-white px-6 py-3 rounded-full font-medium shadow-md">Apply Now</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section class="relative py-24 md:py-32 bg-blue-900 overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <img src="./assets/images/about-hero.png" alt="About Loan Clue" class="w-full h-full object-cover opacity-40">
+                <div class="absolute inset-0 bg-gradient-to-r from-blue-900 via-blue-900/80 to-transparent"></div>
+            </div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <h1 class="text-4xl md:text-6xl font-heading font-black text-white mb-6 reveal">About <span class="text-gold-400">Loan Clue</span></h1>
+                <p class="text-xl text-blue-100 max-w-2xl reveal delay-100">Your trusted partner for smart and hassle-free financial solutions.</p>
+            </div>
+        </section>
+
+        <!-- Company Overview -->
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <div class="reveal">
+                        <h2 class="text-blue-600 font-bold uppercase tracking-wider text-sm mb-4">Welcome to Loan Clue</h2>
+                        <h3 class="text-3xl md:text-4xl font-heading font-black text-slate-800 mb-8 leading-tight">Empowering Growth, Enabling Dreams</h3>
+                        <div class="space-y-6 text-slate-600 leading-relaxed text-lg">
+                            <p>
+                                Welcome to <span class="font-bold text-blue-900">Loan Clue</span> — your trusted partner for smart and hassle-free financial solutions.
+                            </p>
+                            <p>
+                                At Loan Clue, we help individuals, professionals, and businesses get the right loan with easy guidance, fast processing, and transparent support. Our mission is to simplify the loan journey and help customers achieve their financial goals without confusion or unnecessary delays.
+                            </p>
+                            <p>
+                                We believe every customer deserves the right financial advice and the best possible loan solution. Our experienced team works closely with clients to understand their needs and provide personalized support from application to disbursal.
+                            </p>
+                            <p>
+                                At Loan Clue, we are committed to building long-term relationships through trust, transparency, and excellent service.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-6 reveal delay-200">
+                        <div class="bg-blue-50 p-8 rounded-3xl border border-blue-100 flex flex-col items-center text-center">
+                            <i class="fa-solid fa-bolt text-4xl text-blue-600 mb-4"></i>
+                            <h4 class="font-bold text-slate-800">Fast Processing</h4>
+                        </div>
+                        <div class="bg-gold-50 p-8 rounded-3xl border border-gold-100 flex flex-col items-center text-center">
+                            <i class="fa-solid fa-shield-check text-4xl text-gold-500 mb-4"></i>
+                            <h4 class="font-bold text-slate-800">Transparent Support</h4>
+                        </div>
+                        <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 flex flex-col items-center text-center col-span-2">
+                            <i class="fa-solid fa-users text-4xl text-blue-800 mb-4"></i>
+                            <h4 class="font-bold text-slate-800 text-xl">Trusted by Thousands</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What We Offer -->
+        <section class="py-20 bg-slate-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="mb-16 reveal">
+                    <h2 class="text-blue-600 font-bold uppercase tracking-wider text-sm mb-2">Our Portfolio</h2>
+                    <h3 class="text-4xl font-heading font-black text-slate-800">What We Offer</h3>
+                    <div class="w-24 h-1 bg-gold-400 mx-auto mt-6 rounded-full"></div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Service Cards -->
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-all reveal">
+                        <i class="fa-solid fa-briefcase text-3xl text-blue-600 mb-4"></i>
+                        <h4 class="text-xl font-bold text-slate-800 mb-2">Business Loans</h4>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-all reveal delay-100">
+                        <i class="fa-solid fa-user-tie text-3xl text-blue-600 mb-4"></i>
+                        <h4 class="text-xl font-bold text-slate-800 mb-2">Personal Loans</h4>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-all reveal delay-200">
+                        <i class="fa-solid fa-coins text-3xl text-blue-600 mb-4"></i>
+                        <h4 class="text-xl font-bold text-slate-800 mb-2">Working Capital Solutions</h4>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-all reveal delay-300">
+                        <i class="fa-solid fa-file-invoice-dollar text-3xl text-blue-600 mb-4"></i>
+                        <h4 class="text-xl font-bold text-slate-800 mb-2">OD & CC Facilities</h4>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-all reveal delay-400">
+                        <i class="fa-solid fa-house-chimney text-3xl text-blue-600 mb-4"></i>
+                        <h4 class="text-xl font-bold text-slate-800 mb-2">Loan Against Property</h4>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-all reveal delay-500">
+                        <i class="fa-solid fa-arrow-right-arrow-left text-3xl text-blue-600 mb-4"></i>
+                        <h4 class="text-xl font-bold text-slate-800 mb-2">Balance Transfer & Top-Up</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section class="py-24 bg-blue-900 text-white relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center mb-16 reveal">
+                    <h2 class="text-blue-300 font-bold uppercase tracking-wider text-sm mb-2">The Loan Clue Advantage</h2>
+                    <h3 class="text-4xl font-heading font-black">Why Choose Loan Clue?</h3>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-10 gap-x-12">
+                    <div class="flex items-start gap-4 reveal">
+                        <div class="w-8 h-8 rounded-full bg-gold-400 flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-check text-blue-900 text-sm"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold mb-2">Quick & Easy Process</h4>
+                            <p class="text-blue-200 font-light">Minimal friction from application to approval.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 reveal delay-100">
+                        <div class="w-8 h-8 rounded-full bg-gold-400 flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-check text-blue-900 text-sm"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold mb-2">Multiple Bank & NBFC Options</h4>
+                            <p class="text-blue-200 font-light">We partner with the best lenders in India.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 reveal delay-200">
+                        <div class="w-8 h-8 rounded-full bg-gold-400 flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-check text-blue-900 text-sm"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold mb-2">Minimum Documentation</h4>
+                            <p class="text-blue-200 font-light">Less paperwork, more productivity.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 reveal delay-300">
+                        <div class="w-8 h-8 rounded-full bg-gold-400 flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-check text-blue-900 text-sm"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold mb-2">Fast Approval Support</h4>
+                            <p class="text-blue-200 font-light">Direct coordination with credit teams.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 reveal delay-400">
+                        <div class="w-8 h-8 rounded-full bg-gold-400 flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-check text-blue-900 text-sm"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold mb-2">Expert Financial Guidance</h4>
+                            <p class="text-blue-200 font-light">Personalized advice for your unique situation.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 reveal delay-500">
+                        <div class="w-8 h-8 rounded-full bg-gold-400 flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-check text-blue-900 text-sm"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold mb-2">Trusted by Thousands</h4>
+                            <p class="text-blue-200 font-light">A track record of success and happy clients.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vision & Mission -->
+        <section class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div class="bg-slate-50 p-12 rounded-3xl border border-slate-100 reveal">
+                        <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-8 text-3xl text-blue-600">
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+                        <h3 class="text-3xl font-heading font-black text-slate-800 mb-6">Our Vision</h3>
+                        <p class="text-slate-600 text-lg leading-relaxed">
+                            To become one of India’s most trusted financial service platforms by making loans accessible, simple, and customer-friendly.
+                        </p>
+                    </div>
+                    <div class="bg-blue-50 p-12 rounded-3xl border border-blue-100 reveal delay-200">
+                        <div class="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mb-8 text-3xl text-white">
+                            <i class="fa-solid fa-bullseye"></i>
+                        </div>
+                        <h3 class="text-3xl font-heading font-black text-slate-800 mb-6">Our Mission</h3>
+                        <p class="text-slate-600 text-lg leading-relaxed">
+                            To empower individuals and businesses with the right financial solutions that help them grow, succeed, and achieve their dreams.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t border-slate-800 pt-16 pb-8 text-slate-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-start gap-12 mb-12">
+                <!-- Branding -->
+                <div class="md:w-1/3">
+                    <a href="index.html"
+                        class="font-heading font-black text-2xl tracking-tighter text-white flex items-center gap-2 mb-4">
+                        <i class="fa-solid fa-chart-line text-blue-500"></i>
+                        <span class="brand-name"></span>
+                    </a>
+                    <p class="text-slate-400 text-sm mb-6 max-w-sm">
+                        <span class="brand-tagline"></span>. We provide world-class financial solutions to fuel your growth.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="flex gap-12 sm:gap-24">
+                    <div>
+                        <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-sm">Quick Links</h4>
+                        <ul class="space-y-3 text-sm">
+                            <li><a href="index.html" class="hover:text-blue-400 transition-colors">Home</a></li>
+                            <li><a href="about.html" class="hover:text-blue-400 transition-colors">About Us</a></li>
+                            <li><a href="lender-search.html" class="hover:text-blue-400 transition-colors">Lender Search</a></li>
+                            <li><a href="index.html#services" class="hover:text-blue-400 transition-colors">Services</a></li>
+                            <li><a href="index.html#contact" class="hover:text-blue-400 transition-colors">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom border / Copyright -->
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500">
+                <p>&copy; <span id="year">2026</span> <span class="brand-name"></span>. All rights reserved.</p>
+                <p class="mt-4 md:mt-0 flex items-center">
+                    <i class="fa-solid fa-location-dot mr-2"></i> <span class="company-address"></span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Logic Script -->
+    <script src="./config.js"></script>
+    <script src="./main.js"></script>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+
+</html>

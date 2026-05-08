@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -58,6 +59,9 @@
 
                 <!-- Desktop Navigation (Mega Menu) -->
                 <nav class="hidden md:flex space-x-1 sm:space-x-4 lg:space-x-8 h-full items-center">
+                    <a href="index.html" class="text-slate-600 font-medium hover:text-blue-600 px-3 py-2 transition-colors">Home</a>
+                    <a href="about.html" class="text-slate-600 font-medium hover:text-blue-600 px-3 py-2 transition-colors">About Us</a>
+                    <a href="lender-search.html" class="text-slate-600 font-medium hover:text-blue-600 px-3 py-2 transition-colors">Lender Search</a>
 
                     <!-- Verticals Mega Menu -->
                     <div class="relative has-mega-menu h-full flex items-center cursor-pointer group">
@@ -154,7 +158,7 @@
                         </span>
                         <div
                             class="mega-menu-content absolute top-20 right-0 w-48 bg-white border border-slate-100 shadow-2xl rounded-2xl hidden opacity-0 translate-y-2 transition-all duration-200 py-3 z-50">
-                            <a href="#"
+                            <a href="about.html"
                                 class="block px-6 py-2 hover:bg-slate-50 text-slate-700 hover:text-blue-600">About
                                 Us</a>
                             <a href="#"
@@ -229,18 +233,41 @@
 
     <main class="flex-grow">
         <!-- Hero Section -->
-        <section class="hero-gradient text-white pt-24 pb-32 md:pt-32 md:pb-48 relative">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+        <section class="hero-section relative min-h-[85vh] flex items-center overflow-hidden">
+            <!-- Swiper Slider -->
+            <div class="swiper hero-swiper absolute inset-0 z-0">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide relative">
+                        <img src="./assets/images/hero-1.png" alt="Fintech Office" class="w-full h-full object-cover">
+                        <div class="hero-overlay absolute inset-0 bg-gradient-to-b from-blue-900/80 via-blue-900/60 to-blue-900/80"></div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide relative">
+                        <img src="./assets/images/hero-2.png" alt="Business Team" class="w-full h-full object-cover">
+                        <div class="hero-overlay absolute inset-0 bg-gradient-to-b from-blue-900/80 via-blue-900/60 to-blue-900/80"></div>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="swiper-slide relative">
+                        <img src="./assets/images/hero-3.png" alt="Financial Charts" class="w-full h-full object-cover">
+                        <div class="hero-overlay absolute inset-0 bg-gradient-to-b from-blue-900/80 via-blue-900/60 to-blue-900/80"></div>
+                    </div>
+                </div>
+                <!-- Pagination -->
+                <div class="swiper-pagination !bottom-12"></div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center py-24 md:py-32">
                 <span
-                    class="inline-block py-1.5 px-4 rounded-full bg-blue-800/50 border border-blue-400/30 text-blue-200 font-medium text-sm mb-6 uppercase tracking-wider backdrop-blur-sm reveal">
+                    class="inline-block py-1.5 px-4 rounded-full bg-blue-600/30 border border-blue-400/30 text-blue-200 font-medium text-sm mb-6 uppercase tracking-wider backdrop-blur-md reveal">
                     Welcome to <span class="brand-name font-bold text-white"></span>
                 </span>
                 <h1
-                    class="brand-tagline text-5xl md:text-7xl font-heading font-black tracking-tight mb-8 leading-tight reveal delay-100">
+                    class="brand-tagline text-5xl md:text-7xl font-heading font-black tracking-tight mb-8 leading-tight reveal delay-100 text-white">
                     <!-- Injected by JS -->
                 </h1>
                 <p
-                    class="text-xl md:text-2xl text-blue-100 mb-10 max-w-3xl mx-auto font-light leading-relaxed reveal delay-200">
+                    class="text-xl md:text-2xl text-blue-50 mb-10 max-w-3xl mx-auto font-light leading-relaxed reveal delay-200">
                     Fast, accessible, and professional financing solutions tailored to fuel your next milestone.
                 </p>
                 <div class="flex flex-col sm:flex-row justify-center items-center gap-4 reveal delay-300">
@@ -256,7 +283,7 @@
             </div>
 
             <!-- Curve Graphic at bottom of hero -->
-            <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-[0]">
+            <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-[0] z-20">
                 <svg relative="true" viewBox="0 0 1200 120" preserveAspectRatio="none"
                     class="w-full h-12 md:h-24 fill-slate-50">
                     <path
@@ -442,7 +469,8 @@
                     <div>
                         <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-sm">Company</h4>
                         <ul class="space-y-3 text-sm">
-                            <li><a href="#" class="hover:text-blue-400 transition-colors">About Us</a></li>
+                            <li><a href="about.html" class="hover:text-blue-400 transition-colors">About Us</a></li>
+                            <li><a href="lender-search.html" class="hover:text-blue-400 transition-colors">Lender Search</a></li>
                             <li><a href="#" class="hover:text-blue-400 transition-colors">Careers</a></li>
                             <li><a href="#" class="hover:text-blue-400 transition-colors">Privacy Policy</a></li>
                         </ul>
@@ -462,6 +490,7 @@
     </footer>
 
     <!-- Logic Script -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./config.js"></script>
     <script src="./main.js"></script>
 

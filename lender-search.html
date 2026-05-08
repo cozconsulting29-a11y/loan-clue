@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lender Search | LOAN CLUE</title>
+
+    <!-- External CSS & Fonts -->
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        blue: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#0f172a',
+                        },
+                        gold: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="text-slate-800 antialiased font-sans flex flex-col min-h-screen bg-slate-50">
+
+    <!-- Header Navigation -->
+    <header class="bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-slate-100 shadow-sm transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="font-heading font-black text-2xl tracking-tighter text-blue-900 flex items-center gap-2">
+                        <i class="fa-solid fa-chart-line text-blue-600"></i>
+                        <span class="brand-name">LOAN CLUE</span>
+                    </a>
+                </div>
+
+                <nav class="hidden md:flex space-x-8 h-full items-center">
+                    <a href="index.html" class="text-slate-600 font-medium hover:text-blue-600 transition-colors">Home</a>
+                    <a href="about.html" class="text-slate-600 font-medium hover:text-blue-600 transition-colors">About Us</a>
+                    <a href="lender-search.html" class="text-blue-600 font-semibold border-b-2 border-blue-600">Lender Search</a>
+                </nav>
+
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="index.html#contact" class="bg-blue-600 text-white px-6 py-2.5 rounded-full font-medium shadow-md hover:bg-blue-700 transition-all">Apply Now</a>
+                </div>
+                
+                <div class="flex items-center md:hidden">
+                    <button id="mobile-menu-btn" class="text-slate-500 hover:text-blue-600 focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Filters Section -->
+            <div class="bg-white rounded-3xl shadow-sm border border-slate-100 p-8 mb-10">
+                <h1 class="text-3xl font-heading font-black text-slate-900 mb-2">Lender Database</h1>
+                <p class="text-slate-500 mb-8">Comprehensive list of lenders and their specific business criteria.</p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Vintage</label>
+                        <select id="filter-vintage" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white focus:border-blue-600 outline-none transition-all cursor-pointer">
+                            <option value="All">All Vintage</option>
+                            <option value="1 Years">1 Years</option>
+                            <option value="2 Years">2 Years</option>
+                            <option value="3 Years">3 Years</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Turnover Range</label>
+                        <select id="filter-turnover" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white focus:border-blue-600 outline-none transition-all cursor-pointer">
+                            <option value="All">All Turnover</option>
+                            <option value="1 Crore">1 Crore</option>
+                            <option value="80 lakh">80 Lakh</option>
+                            <option value="60 Lakh">60 Lakh</option>
+                            <option value="50 lakh">50 Lakh</option>
+                            <option value="40 lakh">40 Lakh</option>
+                            <option value="30 Lakh">30 Lakh</option>
+                            <option value="20 Lakh">20 Lakh</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Ownership</label>
+                        <select id="filter-ownership" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white focus:border-blue-600 outline-none transition-all cursor-pointer">
+                            <option value="All">All Ownership</option>
+                            <option value="Own">Own</option>
+                            <option value="Own/rented">Own/Rented</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Table Section -->
+            <div class="bg-white rounded-3xl shadow-sm border border-slate-100 overflow-hidden delay-100">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse min-w-[900px]">
+                        <thead>
+                            <tr class="bg-slate-50 border-b border-slate-100">
+                                <th class="px-6 py-4 text-xs font-bold text-slate-400 uppercase tracking-wider">Bank Name</th>
+                                <th class="px-6 py-4 text-xs font-bold text-slate-400 uppercase tracking-wider">Vintage</th>
+                                <th class="px-6 py-4 text-xs font-bold text-slate-400 uppercase tracking-wider">Turnover</th>
+                                <th class="px-6 py-4 text-xs font-bold text-slate-400 uppercase tracking-wider">Account Type</th>
+                                <th class="px-6 py-4 text-xs font-bold text-slate-400 uppercase tracking-wider">Ownership</th>
+                                <th class="px-6 py-4 text-xs font-bold text-slate-400 uppercase tracking-wider text-center">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="lender-table-body" class="divide-y divide-slate-50">
+                            <!-- Rows will be injected here -->
+                        </tbody>
+                    </table>
+                </div>
+                <!-- Empty State -->
+                <div id="empty-state" class="hidden p-20 text-center">
+                    <div class="w-20 h-20 bg-slate-50 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fa-solid fa-magnifying-glass text-slate-300 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800">No Lenders Found</h3>
+                    <p class="text-slate-500">Adjust your filters to see more options.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 pt-16 pb-8 text-slate-400 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center text-xs border-t border-slate-800 pt-8">
+                <p>&copy; 2026 <span class="brand-name">LOAN CLUE</span>. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="./config.js"></script>
+    <script src="./lender-data.js"></script>
+    <script src="./main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tableBody = document.getElementById('lender-table-body');
+            const emptyState = document.getElementById('empty-state');
+            const filterVintage = document.getElementById('filter-vintage');
+            const filterTurnover = document.getElementById('filter-turnover');
+            const filterOwnership = document.getElementById('filter-ownership');
+
+            function renderTable(data) {
+                tableBody.innerHTML = '';
+                if (data.length === 0) {
+                    emptyState.classList.remove('hidden');
+                    return;
+                }
+                emptyState.classList.add('hidden');
+
+                data.forEach(item => {
+                    const row = document.createElement('tr');
+                    row.className = "hover:bg-blue-50 transition-colors";
+                    row.innerHTML = `
+                        <td class="px-6 py-5 font-bold text-slate-800 uppercase tracking-tight">${item.name}</td>
+                        <td class="px-6 py-5 text-slate-600">${item.vintage}</td>
+                        <td class="px-6 py-5 text-slate-600">${item.turnover}</td>
+                        <td class="px-6 py-5">
+                            <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-md text-xs font-bold border border-blue-100">${item.account}</span>
+                        </td>
+                        <td class="px-6 py-5">
+                            <span class="px-3 py-1 rounded-full text-xs font-bold ${item.ownership === 'Own' ? 'bg-green-100 text-green-700' : 'bg-slate-100 text-slate-700'}">
+                                ${item.ownership}
+                            </span>
+                        </td>
+                        <td class="px-6 py-5 text-center">
+                            <a href="index.html#contact" class="inline-flex items-center justify-center bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-bold shadow-sm hover:bg-blue-700 transition-all hover:-translate-y-0.5">
+                                Enquiry Now
+                            </a>
+                        </td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            }
+
+            function filterData() {
+                const vintage = filterVintage.value;
+                const turnover = filterTurnover.value;
+                const ownership = filterOwnership.value;
+
+                if (!window.lenderData) return;
+
+                const filtered = window.lenderData.filter(item => {
+                    const matchVintage = vintage === 'All' || item.vintage === vintage;
+                    const matchTurnover = turnover === 'All' || item.turnover.toLowerCase().includes(turnover.toLowerCase());
+                    const matchOwnership = ownership === 'All' || item.ownership === ownership;
+
+                    return matchVintage && matchTurnover && matchOwnership;
+                });
+
+                renderTable(filtered);
+            }
+
+            [filterVintage, filterTurnover, filterOwnership].forEach(el => {
+                el.addEventListener('change', filterData);
+            });
+
+            if (window.lenderData) {
+                renderTable(window.lenderData);
+            }
+        });
+    </script>
+</body>
+
+</html>

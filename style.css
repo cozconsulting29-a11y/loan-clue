@@ -28,24 +28,34 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 .delay-200 { transition-delay: 200ms; }
 .delay-300 { transition-delay: 300ms; }
 
-/* Custom Hero Background Gradient */
-.hero-gradient {
-  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
-  position: relative;
-  overflow: hidden;
+/* Custom Hero Section */
+.hero-section {
+  background-color: #0f172a; /* Fallback */
 }
 
-/* Abstract Background Pattern for Hero */
-.hero-gradient::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle at center, rgba(37, 99, 235, 0.15) 0%, transparent 50%);
-  animation: rotate 60s linear infinite;
-  pointer-events: none;
+.hero-swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.hero-overlay {
+  background: linear-gradient(to bottom, rgba(15, 23, 42, 0.7) 0%, rgba(15, 23, 42, 0.4) 50%, rgba(15, 23, 42, 0.7) 100%);
+  z-index: 1;
+}
+
+/* Swiper Pagination Styling */
+.swiper-pagination-bullet {
+  width: 30px !important;
+  height: 4px !important;
+  border-radius: 2px !important;
+  background: rgba(255, 255, 255, 0.3) !important;
+  opacity: 1 !important;
+  transition: all 0.3s ease !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #fbbf24 !important; /* gold-400 */
+  width: 50px !important;
 }
 
 @keyframes rotate {
